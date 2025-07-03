@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>who wants toat springh cafe</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6c5ce7);
+            background-size: 400% 400%;
+            animation: gradientShift 4s ease infinite;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(5deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(1000px) rotateX(5deg) translateY(0px); }
+            50% { transform: perspective(1000px) rotateX(5deg) translateY(-10px); }
+        }
+
+        .url-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            word-break: break-all;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+
+        .url-text::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 150, 0.3), 
+                rgba(0, 255, 255, 0.3), 
+                rgba(255, 255, 0, 0.3), 
+                rgba(150, 0, 255, 0.3));
+            border-radius: 15px;
+            filter: blur(20px);
+            z-index: -1;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .char {
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .char:hover {
+            transform: scale(1.5) rotate(360deg);
+            color: #ff6b6b;
+            text-shadow: 0 0 20px #ff6b6b;
+        }
+
+        .char:nth-child(odd) {
+            animation-delay: 0.1s;
+            color: #4ecdc4;
+        }
+
+        .char:nth-child(even) {
+            animation-delay: 0.2s;
+            color: #f9ca24;
+        }
+
+        .char:nth-child(3n) {
+            animation-delay: 0.3s;
+            color: #eb4d4b;
+        }
+
+        .char:nth-child(4n) {
+            animation-delay: 0.4s;
+            color: #6c5ce7;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(0deg); }
+            40% { transform: translateY(-10px) rotate(5deg); }
+            60% { transform: translateY(-5px) rotate(-5deg); }
+        }
+
+        .special-effects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .emoji-rain {
+            position: absolute;
+            font-size: 30px;
+            animation: fall 4s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), 0 0 30px #ff6b6b; }
+            to { text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), 0 0 50px #4ecdc4; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">😏 who wants toat springh cafe 😏</div>
+        
+        <div class="url-text" id="urlText">
+            https://www.grubhub.com/restaurant/spring-cafe-153d-centre-st-new-york/1218395/grouporder/GG9K8lggEfCK8xcQsduKIQ?blockModal=true&utm_source=grubhub_web&utm_medium=content_owned&utm_campaign=product_sharedcart_join&utm_content=share-link
+        </div>
+        
+        <div class="special-effects" id="effects"></div>
+    </div>
+
+    <script>
+        // Convert text to individual animated characters
+        function animateText() {
+            const textElement = document.getElementById('urlText');
+            const text = textElement.textContent;
+            textElement.innerHTML = '';
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const span = document.createElement('span');
+                span.className = 'char';
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.style.animationDelay = (i * 0.05) + 's';
+                textElement.appendChild(span);
+            }
+        }
+
+        // Create sparkles
+        function createSparkles() {
+            const effects = document.getElementById('effects');
+            
+            for (let i = 0; i < 50; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                effects.appendChild(sparkle);
+            }
+        }
+
+        // Create falling emojis
+        function createEmojiRain() {
+            const emojis = ['🍔', '🍕', '🌮', '🍜', '🍗', '🥗', '🍱', '🍝', '🍤', '🌯', '🥪', '🍖', '🥘', '🍲'];
+            
+            setInterval(() => {
+                const emoji = document.createElement('div');
+                emoji.className = 'emoji-rain';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + '%';
+                emoji.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => {
+                    emoji.remove();
+                }, 5000);
+            }, 300);
+        }
+
+        // Initialize all animations
+        animateText();
+        createSparkles();
+        createEmojiRain();
+
+        // Add click effect to container
+        document.querySelector('.container').addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.width = '100px';
+            ripple.style.height = '100px';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.left = (e.clientX - 50) + 'px';
+            ripple.style.top = (e.clientY - 50) + 'px';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
